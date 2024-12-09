@@ -47,3 +47,10 @@ if (-not (Test-Path -Path $filteredFolder)) {
 $filteredFile = "$filteredFolder\filtered.txt"
 $filteredData.Name | Out-File -FilePath $filteredFile
 
+# Specify path to "Archived" folder and create a folder if it does not exist
+$archiveFolder = "E:\Vanier MEQ-4\Web Development Environment I\Assignment 01\Archived"
+if (-not (Test-Path -Path $archiveFolder)) {
+    New-Item -ItemType Directory -Path $archiveFolder
+}
+
+
