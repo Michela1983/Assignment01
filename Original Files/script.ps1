@@ -19,3 +19,13 @@ $data = @(
         City = "Cork"
     }
 )
+
+# Specify the path to save the CSV file
+$csvPath = "E:\Vanier MEQ-4\Web Development Environment I\Assignment 01\Original Files\data.csv"
+
+# Export data to the CSV file
+$data | Export-Csv -Path $csvPath -NoTypeInformation
+
+# Confirm that data has been successfully written to the CSV file
+Write-Host "Your data has been successfully written to $csvPath!"
+
