@@ -34,3 +34,16 @@ $data = Import-Csv -Path $csvPath
 Write-Host "Data contained in the CSV file:" 
 $data
 
+# Retrieve a specific value in the CSV file (ex. "Gustav")
+$filteredData = $data | Where-Object { $_.Name -eq "Gustav"}
+
+# Specify path to "Filtered" folder and create a folder if it does not exist
+$filteredFolder = "E:\Vanier MEQ-4\Web Development Environment I\Assignment 01\Filtered"
+if (-not (Test-Path -Path $filteredFolder)) {
+    New-Item -ItemType Directory -Path $filteredFolder
+}
+
+# Write the filtered name to a text file inside the "Filtered folder" 
+$filteredFile = "$filteredFolder\filtered.txt"
+$filteredData.Name | Out-File -FilePath $filteredFile
+
