@@ -29,3 +29,8 @@ $data | Export-Csv -Path $csvPath -NoTypeInformation
 # Confirm that data has been successfully written to the CSV file
 Write-Host "Your data has been successfully written to $csvPath!"
 
+# Import and read the CSV file
+$data = Import-Csv -Path $csvPath 
+Write-Host "Data contained in the CSV file:" 
+$data
+
